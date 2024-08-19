@@ -21,5 +21,12 @@ public class Fibonacci {
         }
         return muestra;
     }
+    // Imprimir por pantalla
+    public static void main(String[] args) {
+        int tamañoDeLaMuestra = 5;
+        int[] resultado = metodoFibonacci(tamañoDeLaMuestra);
+        System.out.println(Arrays.toString(resultado));
+
+    }
     
 }
