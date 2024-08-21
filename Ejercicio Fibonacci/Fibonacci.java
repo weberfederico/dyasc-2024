@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Fibonacci {
 
     // Este metodo permite ejecutar la secuencia Fibonacci, la cual consiste en una serie infinita, aunque delimitada por el parametro,
@@ -21,12 +24,22 @@ public class Fibonacci {
         }
         return muestra;
     }
-    // Imprimir por pantalla
+    
+    // Ingresar e imprimir por pantalla
     public static void main(String[] args) {
-        int tamañoDeLaMuestra = 5;
-        int[] resultado = metodoFibonacci(tamañoDeLaMuestra);
-        System.out.println(Arrays.toString(resultado));
+        Scanner scanner = new Scanner(System.in); // Creo el objeto Scanner para leer la entrada del usuario
 
+        System.out.print("Ingrese el tamaño de la muestra para la secuencia: ");
+        int tamañoDeLaMuestra = scanner.nextInt(); 
+
+        try {
+            int[] fibonacci = metodoFibonacci(tamañoDeLaMuestra); // Llamo al método para generar la secuencia
+            System.out.println("La secuencia de Fibonacci es: " + Arrays.toString(fibonacci)); // Imprime la secuencia
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage()); 
+        }
+
+        scanner.close(); 
     }
     
 }
